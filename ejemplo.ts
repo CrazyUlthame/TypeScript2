@@ -1,12 +1,14 @@
-function PropertyDecorator(
+function MethodDecorator(
     target: Object,
-    PropertyKey: string | symbol
-    ){
-        console.log("PropertyDecorator called on: ", target, PropertyKey);
-    }
+    propertyKey: string,
+    descriptor: TypedPropertyDescriptor<any>
+){
+    console.log("MethodDecorator called on: ", target, propertyKey, descriptor);
+}
 
-    class PropertyDecoratorExample{
-        @PropertyDecorator
-        name: string;
+class MethodDecoratorExample{
+    @MethodDecorator
+    MethodDecorator(){
+        
     }
-    
+}

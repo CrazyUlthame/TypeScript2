@@ -4,14 +4,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-function PropertyDecorator(target, PropertyKey) {
-    console.log("PropertyDecorator called on: ", target, PropertyKey);
+function MethodDecorator(target, propertyKey, descriptor) {
+    console.log("MethodDecorator called on: ", target, propertyKey, descriptor);
 }
-var PropertyDecoratorExample = /** @class */ (function () {
-    function PropertyDecoratorExample() {
+var MethodDecoratorExample = /** @class */ (function () {
+    function MethodDecoratorExample() {
     }
+    MethodDecoratorExample.prototype.MethodDecorator = function () {
+    };
     __decorate([
-        PropertyDecorator
-    ], PropertyDecoratorExample.prototype, "name");
-    return PropertyDecoratorExample;
+        MethodDecorator
+    ], MethodDecoratorExample.prototype, "MethodDecorator");
+    return MethodDecoratorExample;
 }());
