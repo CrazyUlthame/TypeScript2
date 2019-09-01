@@ -1,13 +1,5 @@
-class Adder {
-    add = (b: string): string => {
-        return this.a + b;
-    }
-    a: string;
-}
+var obj = {x: 1, y: 2, z:3};
+console.log(obj.x);
 
-class ExtendedAdder extends Adder {
-    private superAdd = this.add;
-    add = (b: string): string => {
-        return this.superAdd(b);
-    }
-}
+var {x, y , z} = obj;
+console.log(x);
