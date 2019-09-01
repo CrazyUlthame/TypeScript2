@@ -1,33 +1,19 @@
-function log(constructor: Function): void{
-    console.log('Registered	Class: ' + constructor['name'] +'at ' + Date.now()); 
-}
-
-function logm<T>(target: Object, propertyKey: string | symbol, descriptor: TypedPropertyDescriptor<T>): void {
-    console.log('registered method: ' + propertyKey.toString() + ' at ' + Date.now());
-}
-
-function logparam (target: Object, propertyKey: string | symbol, parameterINdex: number): void{
-    console.log('Registered parameter: ' + propertyKey.toString() + ' - ' + parameterINdex + ' at ' + Date.now());
-}
-
-@log
-class MyClass{
-    public name: string = 'name';
-    constructor() {
-        console.log('constructor');
-    }
-
-    @logm
-    public myMethod(){
-        console.log('method')
-    }
-
-    @logm
-    public myMethod2(param1: number, @logparam param2: boolean){
-        console.log('mehotd2')
+function ClassDecoratorParams( param1: number, param2: string){
+    return function(
+        target: Function
+    ){
+        console.log("ClassDecoratorParams(" + param1 + ", '" + param2 + "') called on: ", target);
     }
 }
 
-var myClass = new MyClass();
-myClass.myMethod();
-myClass.myMethod2(1, false);
+@ClassDecoratorParams(1, "a")
+@ClassDecoratorParams(1, "b")
+class ClassDecoratorParamsExample{
+}
+
+ClassDecoratorParams(2, "b") called on: function ClassDecoratorParamsExample()
+
+}
+ClassDecoratorParams(1, "a") called on: function ClassDecoratorParamsExample(){
+
+}
