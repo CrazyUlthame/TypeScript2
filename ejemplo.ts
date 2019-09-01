@@ -1,10 +1,13 @@
-function Person(age){
-    this.age = age
-    this.growOld = () =>{
-        this.age++;
+class Adder {
+    add = (b: string): string => {
+        return this.a + b;
     }
+    a: string;
 }
 
-var person = new Person(1);
-setTimeout(person.growOld,1000);
-setTimeout(function() { console.log(person.age); },2000);
+class ExtendedAdder extends Adder {
+    private superAdd = this.add;
+    add = (b: string): string => {
+        return this.superAdd(b);
+    }
+}
