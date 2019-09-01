@@ -1,13 +1,21 @@
-function iReturnPromiseAfter1Second():Promise<string> {
-    return new Promise((resolve) => {
-        setTimeout(() => resolve ("hello world!"), 1000);
-    });
-}
-
-Promise.resolve(123)
-    .then((res) => {
-        return iReturnPromiseAfter1Second();
+loadJSONAsync('good.json')
+    .then(function(val) { console.log(val);})
+    .catch(function(err){
+        console.log('goodjson error', err.message);
     })
-    .then((res) => {
-        console.log(res);
+
+    .then(function () {
+        return loadJSONAsync('absent.json');
+    })
+    .then(function(val) { console.log(val);})
+    .catch(function (err) {
+        console.log('absent.json error', err.message);
+    })
+
+    .then(function (){
+        return loadJSONAsync('bad.json');
+    })
+    .then( function ( val) {console.log(val);}
+    .catch(function (err){
+        console.log('bad.json error', err.message);
     });
