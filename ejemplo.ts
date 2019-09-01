@@ -11,3 +11,6 @@ Promise.resolve(123)
         console.log(res);
         return Promise.resolve(123);
     })
+    .catch((err) => {
+        console.log(err.message);
+    });
