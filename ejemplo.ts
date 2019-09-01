@@ -1,19 +1,35 @@
-class FooBase {
-    public x: number;
-    private y: number;
-    protected z: number;
+class Animal{
+    name: string;
+    constructor(theName: string) { this.name = theName}
+        move(distanceInMeters: number = 0){
+            console.log(`${this.name} moved ${distanceInMeters}m. `)
+        }
 }
 
-var foo = new FooBase();
-foo.x;
-foo.y;
-foo.z;
-
-class FooChild extends FooBase{
-    constructor() {
-        super();
-        this.x;
-        this.y;
-        this.z;
-    }
+class Snake extends Animal{
+    constructor(name: string) {super(name); }
+        move(distanceInMeters = 5){
+            console.log("Slithering...");
+            super.move(distanceInMeters);
+        }
 }
+
+class Rhino extends Animal{
+    constructor(name: string) {super(name); }
+        move(distanceInMeters = 10){
+            console.log("Slithering...");
+            super.move(distanceInMeters);
+        }
+}
+
+class Elephant extends Animal{
+    constructor(name: string) {super(name); }
+        move(distanceInMeters = 20){
+            console.log("Slithering...");
+            super.move(distanceInMeters);
+        }
+}
+
+let array: Animal[] = [new Rhino('Rinocerator'), new Snake("Serpentina"), new Elephant("Elefanton")];
+
+console.log(array);
