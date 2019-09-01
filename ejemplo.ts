@@ -1,13 +1,12 @@
 function* generator() {
-    console.log('Execution started');
-    yield 0;
-    console.log('execution resumed');
+    var bar = yield 'console log';
+    console.log(bar);
     yield 1;
-    console.log('execution resumed');
 }
 
-var iterator = generator();
-console.log('Starting iteration');
-console.log(iterator.next());
-console.log(iterator.next());
-console.log(iterator.next());
+const iterator = generator()
+const foo = iterator.next();
+console.log(foo.value);
+const nextThing = iterator.next('un texto x we');
+console.log(nextThing);
+
