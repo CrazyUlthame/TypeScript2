@@ -1,18 +1,19 @@
-class Greeter {
-    greeting: string;
-    constructor(message: string){
-        this.greeting = message;
-    }
-    greet(){
-        return "hello, " + this.greeting;
-    }
+class FooBase {
+    public x: number;
+    private y: number;
+    protected z: number;
 }
 
-let greeter = new Greeter("World");
-let button = document.createElement('button');
-button.textContent = "say hello";
-button.onclick = function() {
-    alert(greeter.greet());
-}
+var foo = new FooBase();
+foo.x;
+foo.y;
+foo.z;
 
-document.body.appendChild(button);
+class FooChild extends FooBase{
+    constructor() {
+        super();
+        this.x;
+        this.y;
+        this.z;
+    }
+}
