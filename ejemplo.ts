@@ -1,12 +1,13 @@
-function* generator() {
-    var bar = yield 'console log';
-    console.log(bar);
-    yield 1;
+function* generator(){
+    try{
+        yield 'foo';
+        throw Error("Test");
+    }
+    catch(err){
+        console.log(err.message);
+    }
 }
 
-const iterator = generator()
-const foo = iterator.next();
+var iterator = generator();
+var foo = iterator.next();
 console.log(foo.value);
-const nextThing = iterator.next('un texto x we');
-console.log(nextThing);
-

@@ -26,22 +26,23 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 function generator() {
-    var bar;
+    var err_1;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, 'console log'];
+            case 0:
+                _a.trys.push([0, 2, , 3]);
+                return [4 /*yield*/, 'foo'];
             case 1:
-                bar = _a.sent();
-                console.log(bar);
-                return [4 /*yield*/, 1];
-            case 2:
                 _a.sent();
-                return [2 /*return*/];
+                throw Error("Test");
+            case 2:
+                err_1 = _a.sent();
+                console.log(err_1.message);
+                return [3 /*break*/, 3];
+            case 3: return [2 /*return*/];
         }
     });
 }
 var iterator = generator();
 var foo = iterator.next();
 console.log(foo.value);
-var nextThing = iterator.next('un texto x we');
-console.log(nextThing);
