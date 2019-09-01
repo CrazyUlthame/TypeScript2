@@ -1,3 +1,9 @@
-var array = [1,2,3,4];
-var [x,y, ...rest] = array;
-console.log(x,y,...rest);
+const promise = new Promise((resolve, reject) => {
+    resolve(123);
+});
+promise.then((res) => {
+    console.log('i get called: ', res === 123);    
+});
+promise.catch((err) => {
+
+});
