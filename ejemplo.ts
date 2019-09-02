@@ -1,13 +1,4 @@
-function ParameterDecorator(
-    target: Function,
-    propertyKey: string | symbol,
-    parameterIndex: number
-){
-    console.log("ParameterDecorator called on: ", target, propertyKey, parameterIndex);
-}
+import {sumar, restar} from './exports'
 
-class StaticMethodDecoratorExample{   
-    method(@ParameterDecorator param1: string, @ParameterDecorator param2: number){
-        
-    }
-}
+console.log(sumar(2,3));
+console.log(restar(4,3));
