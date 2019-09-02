@@ -1,12 +1,8 @@
-var multiplicar = function(x){
-    return x * 3;
-}
-var sumar = function (x){
-    return x + 2;
+var	HealthComponent = function (initialHealth){
+    this.health	= initialHealth;
+    this.getHit	= function(amount){
+        this.health -= amount;
+    }
 }
 
-exports.multiplicar = multiplicar;
-exports.sumar = sumar;
-
-var saludo = 'Holis';
-module.exports = saludo;
+module.exports = HealthComponent;
