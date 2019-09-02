@@ -1,4 +1,3 @@
-import * as calc from './exports'
+import exportado from './exportado';
 
-console.log(calc.sumar(2,3));
-console.log(calc.restar(4,3));
+console.log(exportado(4,5));
