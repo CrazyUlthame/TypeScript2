@@ -1,4 +1,4 @@
-import {sumar, restar} from './exports'
+import * as calc from './exports'
 
-console.log(sumar(2,3));
-console.log(restar(4,3));
+console.log(calc.sumar(2,3));
+console.log(calc.restar(4,3));
