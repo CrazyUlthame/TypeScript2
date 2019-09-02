@@ -1,6 +1,12 @@
-"use strict";
-exports.__esModule = true;
-function suma(a, b) {
-    return a + b;
+var multiplicar = function(x){
+    return x * 3;
 }
-exports["default"] = suma;
+var sumar = function (x){
+    return x + 2;
+}
+
+exports.multiplicar = multiplicar;
+exports.sumar = sumar;
+
+var saludo = 'Holis';
+module.exports = saludo;
