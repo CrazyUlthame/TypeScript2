@@ -1,8 +1,4 @@
-var	HealthComponent = function (initialHealth){
-    this.health	= initialHealth;
-    this.getHit	= function(amount){
-        this.health -= amount;
-    }
-}
-
-module.exports = HealthComponent;
+var foo = function () {
+    bar: 123;
+};
+console.log(foo);
